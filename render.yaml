@@ -6,7 +6,7 @@ databases:
 
 services:
   - type: web
-    name: backend-simple-chatroom
+    name: api-simple-chatroom
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
