@@ -26,8 +26,11 @@ class MessagesController < ApplicationController
 
     def create
         message = Message.create!(message_params)
+        p 'before if'
         if message.valid?
+            p 'before broadcast'
             ActionCable.server.broadcast("messages_channel", message)
+            p 'after broadcast'
             render json: { message: message },
             status: :created
         else
