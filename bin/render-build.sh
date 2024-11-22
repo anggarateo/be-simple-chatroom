@@ -10,4 +10,4 @@ bundle install
 # perform database migrations in the build command.
 # Uncomment the following line:
 
-bundle exec rails db:migrate:reset
+bundle exec rails db:environment:set RAILS_ENV=production db:migrate:reset
